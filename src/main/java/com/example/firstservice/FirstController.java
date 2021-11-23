@@ -26,4 +26,9 @@ public class FirstController {
   public String check() {
     return "check. first service.";
   }
+
+  @GetMapping("/")
+  public String healthCheck() {
+    return "ok";
+  }
 }
