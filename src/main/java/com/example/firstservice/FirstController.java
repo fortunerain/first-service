@@ -1,10 +1,7 @@
 package com.example.firstservice;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/first-service")
@@ -25,6 +22,11 @@ public class FirstController {
   @GetMapping("/check")
   public String check() {
     return "check. first service.";
+  }
+
+  @GetMapping("/{id}")
+  public String searchId(@PathVariable Long id) {
+    return String.valueOf(id);
   }
 
 }
